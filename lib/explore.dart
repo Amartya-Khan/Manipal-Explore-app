@@ -11,15 +11,7 @@ class Explore extends StatefulWidget {
 }
 
 class _ExploreState extends State<Explore> {
-  final List<String> _listItem = [
-    'assets/images/beach.jpg',
-    'assets/images/fall.jpg',
-    'assets/images/nature.jpg',
-    'assets/images/food.jpg',
-    'assets/images/game.jpg',
-    'assets/images/club.jpg',
-    'assets/images/all.jpg',
-  ];
+  
 
   final List<Widget> _icons = [
     Icon(MaterialCommunityIcons.beach, color: Colors.grey[500]),
