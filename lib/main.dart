@@ -6,7 +6,9 @@ import 'package:explore_manipal/saved.dart';
 import 'package:explore_manipal/signup.dart';
 import 'package:explore_manipal/home.dart';
 import 'package:explore_manipal/explore.dart';
+import 'package:explore_manipal/navbar.dart';
 import 'package:flutter/material.dart';
+
 
 void main() {
   runApp(MyApp());
@@ -40,8 +42,9 @@ class _MyAppState extends State<MyApp> {
         Explore.id: (context) => Explore(),
         DetailsScreen.id : (content) => DetailsScreen(),
         SavedPage.id: (context) => SavedPage(),
+        MainPage.id: (context) => MainPage(),
       },
-      initialRoute: SavedPage.id,
+      initialRoute: MainPage.id,
     );
   }
 }

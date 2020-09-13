@@ -95,17 +95,18 @@ class _SavedPageState extends State<SavedPage> {
                           children: <Widget>[
                             Container(
                               child: Container(
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      gradient:
-                          LinearGradient(begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter,
-                           colors: [
-                             Colors.black.withOpacity(.6),
-                        Colors.black.withOpacity(.1),
-                        Colors.black.withOpacity(.1),
-                        Colors.black.withOpacity(.6),
-                      ])),),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(20),
+                                    gradient: LinearGradient(
+                                        begin: Alignment.topCenter,
+                                        end: Alignment.bottomCenter,
+                                        colors: [
+                                          Colors.black.withOpacity(.6),
+                                          Colors.black.withOpacity(.1),
+                                          Colors.black.withOpacity(.1),
+                                          Colors.black.withOpacity(.6),
+                                        ])),
+                              ),
                               decoration: BoxDecoration(
                                   boxShadow: [
                                     BoxShadow(
@@ -121,9 +122,7 @@ class _SavedPageState extends State<SavedPage> {
                                   borderRadius: BorderRadius.circular(20),
                                   image: DecorationImage(
                                       image: AssetImage(item),
-                                      fit: BoxFit.cover)
-                                      
-                                      ),
+                                      fit: BoxFit.cover)),
                             ),
                             Positioned(
                               child: Align(
