@@ -1,6 +1,8 @@
+import 'package:explore_manipal/beaches.dart';
 import 'package:explore_manipal/individual.dart';
 import 'package:explore_manipal/login.dart';
 import 'package:explore_manipal/onboarding.dart';
+import 'package:explore_manipal/saved.dart';
 import 'package:explore_manipal/signup.dart';
 import 'package:explore_manipal/home.dart';
 import 'package:explore_manipal/explore.dart';
@@ -36,8 +38,10 @@ class _MyAppState extends State<MyApp> {
         Home.id: (context) => Home(),
         Individual.id: (context)=> Individual(),
         Explore.id: (context) => Explore(),
+        DetailsScreen.id : (content) => DetailsScreen(),
+        SavedPage.id: (context) => SavedPage(),
       },
-      initialRoute: Individual.id,
+      initialRoute: SavedPage.id,
     );
   }
 }
