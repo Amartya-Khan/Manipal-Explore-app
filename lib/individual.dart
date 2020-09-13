@@ -306,21 +306,18 @@ class _DetailsState extends State<Details> {
                 ),
               ]),
               Positioned(
-                  bottom: screen.height*0.24,
-                  left: screen.width*0.17,
+                  bottom: screen.height*0.2,
+                  left: screen.width*0.08,
                   
-                child:  Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
+                child:  Container(
+                      width: screen.width*0.8,
+                      child: 
                         Text(
-                          'Distance from Campus:',
-                          style: TextStyle(fontSize: 20.0, color: Colors.grey),
+                          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
+                          style: TextStyle(fontSize: 17.0, color: Colors.grey),
                         ),
-                        Text(
-                          '150Kms',
-                          style: TextStyle(fontSize: 30.0, color: Colors.grey),
-                        ),
-                      ],
+                        
+                    
                     )),
               
             ]),
