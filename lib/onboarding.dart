@@ -43,7 +43,13 @@ class _OnboardingState extends State<Onboarding> {
               waveType: WaveType.circularReveal,
               pages: [
                 Container(
-                  color: Color(0xffECEFFF),
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(begin: Alignment.topCenter, end: Alignment.bottomCenter,
+                    colors: [
+                      Color(0xffecefff),
+                      Color(0xff595fd9)
+                    ])
+                  ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,

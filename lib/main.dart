@@ -6,7 +6,7 @@ import 'package:explore_manipal/saved.dart';
 import 'package:explore_manipal/signup.dart';
 import 'package:explore_manipal/highestRated.dart';
 import 'package:explore_manipal/explore.dart';
-import 'package:explore_manipal/navbar.dart';
+import 'package:explore_manipal/home.dart';
 import 'package:flutter/material.dart';
 
 
@@ -44,7 +44,7 @@ class _MyAppState extends State<MyApp> {
         SavedPage.id: (context) => SavedPage(),
         MainPage.id: (context) => MainPage(),
       },
-      initialRoute: MainPage.id,
+      initialRoute: Onboarding.id,
     );
   }
 }
