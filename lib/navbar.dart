@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'home.dart';
+import 'highestRated.dart';
 import 'explore.dart';
 import 'saved.dart';
 

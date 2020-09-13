@@ -1,5 +1,5 @@
 
-import 'package:explore_manipal/home.dart';
+import 'package:explore_manipal/highestRated.dart';
 import 'package:flutter/material.dart';
 
 import 'signup.dart';

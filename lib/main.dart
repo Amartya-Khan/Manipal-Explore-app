@@ -4,7 +4,7 @@ import 'package:explore_manipal/login.dart';
 import 'package:explore_manipal/onboarding.dart';
 import 'package:explore_manipal/saved.dart';
 import 'package:explore_manipal/signup.dart';
-import 'package:explore_manipal/home.dart';
+import 'package:explore_manipal/highestRated.dart';
 import 'package:explore_manipal/explore.dart';
 import 'package:explore_manipal/navbar.dart';
 import 'package:flutter/material.dart';
