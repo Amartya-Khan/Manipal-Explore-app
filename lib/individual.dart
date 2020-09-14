@@ -38,13 +38,7 @@ class _IndividualState extends State<Individual>
                 icon: Icon(Icons.menu),
                 onPressed: () {},
               ),
-              FloatingActionButton(
-                  onPressed: () {},
-                  backgroundColor: Colors.grey.withOpacity(0.3),
-                  mini: true,
-                  elevation: 0.0,
-                  child: Icon(Icons.shopping_cart,
-                      color: Colors.black, size: 17.0)),
+              
             ],
           ),
         ),

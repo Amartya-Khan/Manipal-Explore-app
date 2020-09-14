@@ -153,9 +153,10 @@ class _HomeState extends State<Home> {
                         // Text(_current == 0 ?'Name1':_current == 1:'Name2', style: TextStyle(color: Colors.white),)
                         Positioned(
                           top: 5,
-                          left: 200,
+                          left: 220,
                           child: Container(
-                            
+                            height: 50,
+                            width: 50,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(30),
                       //         gradient:
@@ -177,43 +178,43 @@ class _HomeState extends State<Home> {
                                       icon: saveColor0? Icon(MaterialCommunityIcons.bookmark_check):Icon(MaterialCommunityIcons.bookmark),
                                       tooltip: 'Add to favorite',
                                       color:
-                                          saveColor0 ? Colors.white : Colors.white,
+                                          saveColor0 ? Colors.indigoAccent[100] : Colors.white,
                                       onPressed: () => setState(
                                           () => saveColor0 = !saveColor0),
                                     ),
                                 '1': (check) => IconButton(
-                                      icon: Icon(MaterialCommunityIcons.pin),
+                                   iconSize: 30,
+                                      icon: saveColor1? Icon(MaterialCommunityIcons.bookmark_check):Icon(MaterialCommunityIcons.bookmark),
                                       tooltip: 'Add to favorite',
                                       color: saveColor1
-                                          ? Colors.purple
-                                          : Colors.grey,
+                                          ? Colors.indigoAccent[100] : Colors.white,
                                       onPressed: () => setState(
                                           () => saveColor1 = !saveColor1),
                                     ),
                                 '2': (check) => IconButton(
-                                      icon: Icon(MaterialCommunityIcons.pin),
+                                   iconSize: 30,
+                                      icon:  saveColor2? Icon(MaterialCommunityIcons.bookmark_check):Icon(MaterialCommunityIcons.bookmark),
                                       tooltip: 'Add to favorite',
                                       color: saveColor2
-                                          ? Colors.purple
-                                          : Colors.grey,
+                                          ? Colors.indigoAccent[100] : Colors.white,
                                       onPressed: () => setState(
                                           () => saveColor2 = !saveColor2),
                                     ),
                                 '3': (check) => IconButton(
-                                      icon: Icon(MaterialCommunityIcons.pin),
+                                  iconSize: 30,
+                                      icon: saveColor3? Icon(MaterialCommunityIcons.bookmark_check):Icon(MaterialCommunityIcons.bookmark),
                                       tooltip: 'Add to favorite',
                                       color: saveColor3
-                                          ? Colors.purple
-                                          : Colors.grey,
+                                          ? Colors.indigoAccent[100] : Colors.white,
                                       onPressed: () => setState(
                                           () => saveColor3 = !saveColor3),
                                     ),
                                 '4': (check) => IconButton(
-                                      icon: Icon(MaterialCommunityIcons.pin),
+                                  iconSize: 30,
+                                      icon: saveColor4? Icon(MaterialCommunityIcons.bookmark_check):Icon(MaterialCommunityIcons.bookmark),
                                       tooltip: 'Add to favorite',
                                       color: saveColor4
-                                          ? Colors.purple
-                                          : Colors.grey,
+                                          ? Colors.indigoAccent[100] : Colors.white,
                                       onPressed: () => setState(
                                           () => saveColor4 = !saveColor4),
                                     ),
@@ -233,23 +234,28 @@ class _HomeState extends State<Home> {
                             caseBuilders: {
                               '0': (check) => Text(
                                     'Kaup Beach',
-                                    style: TextStyle(color: Colors.white),
+                                    style: GoogleFonts.montserrat(color: Colors.white,
+                                    fontSize: 20),
                                   ),
                               '1': (check) => Text(
                                     'MIT',
-                                    style: TextStyle(color: Colors.white),
+                                    style: GoogleFonts.montserrat(color: Colors.white,
+                                    fontSize: 20),
                                   ),
                               '2': (check) => Text(
                                     'Malpe Beach',
-                                    style: TextStyle(color: Colors.white),
+                                    style: GoogleFonts.montserrat(color: Colors.white,
+                                    fontSize: 20),
                                   ),
                               '3': (check) => Text(
                                     'Arbi Falls',
-                                    style: TextStyle(color: Colors.white),
+                                    style: GoogleFonts.montserrat(color: Colors.white,
+                                    fontSize: 20),
                                   ),
                               '4': (check) => Text(
                                     'Hoode Beach',
-                                    style: TextStyle(color: Colors.white),
+                                    style: GoogleFonts.montserrat(color: Colors.white,
+                                    fontSize: 20),
                                   ),
                             },
                             fallbackBuilder: (BuildContext context) =>

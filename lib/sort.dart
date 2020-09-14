@@ -81,18 +81,18 @@ class _ExploreState extends State<Explore> {
                   )
                 ],
               ),
-                      SizedBox(
-                        height: 10,
-                      ),
+                      SizedBox(height: 10,),
                       Positioned(
                           child: SvgPicture.asset(
-                        'assets/onboarding1.svg',
-                        height: 250,
+                        'assets/car1.svg',
+                        height: screen.height*0.22,
                       ))
+
                     ],
                   ),
                 ),
               ),
+              
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 20),
                 child: Material(
