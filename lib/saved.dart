@@ -75,7 +75,7 @@ class _SavedPageState extends State<SavedPage> {
                       Positioned(
                           child: SvgPicture.asset(
                         'assets/save.svg',
-                        height: screen.height*0.3,
+                        height: screen.height*0.26,
                       ))
                     ],
                   ),

@@ -35,14 +35,16 @@ class _IndividualState extends State<Individual>
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               IconButton(
-                icon: Icon(Icons.menu),
-                onPressed: () {},
+                icon: Icon(
+                  Icons.chevron_left,
+                ),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
               ),
-              
             ],
           ),
         ),
-        
         Padding(
           padding: EdgeInsets.only(left: 15.0),
           child: Center(
@@ -89,4 +91,3 @@ class _IndividualState extends State<Individual>
     ));
   }
 }
-

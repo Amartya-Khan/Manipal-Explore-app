@@ -1,4 +1,4 @@
-
+import 'package:explore_manipal/individual.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:carousel_slider/carousel_state.dart';
@@ -10,14 +10,13 @@ import 'package:google_fonts/google_fonts.dart';
 class Home extends StatefulWidget {
   static String id = 'home';
 
-
   @override
   _HomeState createState() => _HomeState();
 }
 
 class _HomeState extends State<Home> {
   int _current = 0;
-    String check = '';
+  String check = '';
   String convert = '';
 
   List imgList = [
@@ -46,56 +45,57 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     var screen = MediaQuery.of(context).size;
     return Scaffold(
-     
       body: Container(
           child: ListView(
         // crossAxisAlignment: CrossAxisAlignment.center,
         // mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          
           Stack(
-                  children: <Widget>[
-                    Container(
-                  padding: EdgeInsets.fromLTRB(15.0, screen.height*0.0, 0.0, 0.0),
-                  child: ClayText('Highest',
-                      emboss: true,
-                      spread: 2.5,
-                      //depth: 35,
-                      style: GoogleFonts.montserrat(
-                          fontSize: screen.height * 0.07,
-                          fontWeight: FontWeight.bold)),
-                ),
-                    Container(
-                  padding: EdgeInsets.fromLTRB(15.0, screen.height*0.07, 0.0, 0.0),
-                  child: ClayText('Rated',
-                      emboss: true,
-                      spread: 2.5,
-                      //depth: 35,
-                      style: GoogleFonts.montserrat(
-                          fontSize: screen.height * 0.07,
-                          fontWeight: FontWeight.bold)),
-                ),
-                // padding: EdgeInsets.fromLTRB(260.0, 125.0, 0.0, 0.0),
-                    Container(
-                  padding: EdgeInsets.fromLTRB(screen.width*0.5, screen.height*0.03, 0.0, 0.0),
-                  child: ClayText('.',
-                  depth: 70,
-                      spread: 5,
-                      color: Colors.grey[100],
-                      style: TextStyle(
-                          fontSize: 80.0,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.green)),
-                )
-                  ],
-                ),
+            children: <Widget>[
+              Container(
+                padding:
+                    EdgeInsets.fromLTRB(15.0, screen.height * 0.0, 0.0, 0.0),
+                child: ClayText('Highest',
+                    emboss: true,
+                    spread: 2.5,
+                    //depth: 35,
+                    style: GoogleFonts.montserrat(
+                        fontSize: screen.height * 0.07,
+                        fontWeight: FontWeight.bold)),
+              ),
+              Container(
+                padding:
+                    EdgeInsets.fromLTRB(15.0, screen.height * 0.07, 0.0, 0.0),
+                child: ClayText('Rated',
+                    emboss: true,
+                    spread: 2.5,
+                    //depth: 35,
+                    style: GoogleFonts.montserrat(
+                        fontSize: screen.height * 0.07,
+                        fontWeight: FontWeight.bold)),
+              ),
+              // padding: EdgeInsets.fromLTRB(260.0, 125.0, 0.0, 0.0),
+              Container(
+                padding: EdgeInsets.fromLTRB(
+                    screen.width * 0.5, screen.height * 0.03, 0.0, 0.0),
+                child: ClayText('.',
+                    depth: 70,
+                    spread: 5,
+                    color: Colors.grey[100],
+                    style: TextStyle(
+                        fontSize: 80.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.green)),
+              )
+            ],
+          ),
           Padding(
             padding: EdgeInsets.only(
                 top: screen.height * 0.05, bottom: screen.height * 0.05),
             child: CarouselSlider(
                 options: CarouselOptions(
                   autoPlayAnimationDuration: Duration(milliseconds: 400),
-                  height: screen.height*0.48,
+                  height: screen.height * 0.48,
                   initialPage: 0,
                   autoPlay: true,
                   enlargeCenterPage: true,
@@ -118,30 +118,35 @@ class _HomeState extends State<Home> {
                         color: Colors.transparent,
                       ),
                       child: Stack(children: <Widget>[
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(10.0),
-                          child: Image.asset(
-                            item,
-                            height: 400,
-                            fit: BoxFit.fill,
-                            frameBuilder: (BuildContext context, Widget child,
-                                int frame, bool wasSynchronouslyLoaded) {
-                              return Container(
-                                child: child,
-                                foregroundDecoration: BoxDecoration(
-                                  gradient: LinearGradient(
-                                    begin: Alignment.topCenter,
-                                    end: Alignment.bottomCenter,
-                                    colors: [
-                                      const Color(0xCC000000),
-                                      const Color(0x00000000),
-                                      const Color(0x00000000),
-                                      const Color(0xCC000000),
-                                    ],
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.pushNamed(context, Individual.id);
+                          },
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(10.0),
+                            child: Image.asset(
+                              item,
+                              height: 400,
+                              fit: BoxFit.fill,
+                              frameBuilder: (BuildContext context, Widget child,
+                                  int frame, bool wasSynchronouslyLoaded) {
+                                return Container(
+                                  child: child,
+                                  foregroundDecoration: BoxDecoration(
+                                    gradient: LinearGradient(
+                                      begin: Alignment.topCenter,
+                                      end: Alignment.bottomCenter,
+                                      colors: [
+                                        const Color(0xCC000000),
+                                        const Color(0x00000000),
+                                        const Color(0x00000000),
+                                        const Color(0xCC000000),
+                                      ],
+                                    ),
                                   ),
-                                ),
-                              );
-                            },
+                                );
+                              },
+                            ),
                           ),
                         ),
 
@@ -159,62 +164,85 @@ class _HomeState extends State<Home> {
                             width: 50,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(30),
-                      //         gradient:
-                      //     LinearGradient(begin: Alignment.topCenter, colors: [
-                      //   Colors.white.withOpacity(.4),
-                      //   Colors.white.withOpacity(.2),
-                      // ]
-                      // )
-                      border: Border.all(color: Colors.white),
+                              //         gradient:
+                              //     LinearGradient(begin: Alignment.topCenter, colors: [
+                              //   Colors.white.withOpacity(.4),
+                              //   Colors.white.withOpacity(.2),
+                              // ]
+                              // )
+                              border: Border.all(color: Colors.white),
                             ),
-                                                      child: ConditionalSwitch.single<String>(
+                            child: ConditionalSwitch.single<String>(
                               context: context,
                               valueBuilder: (check) => _current.toString(),
                               caseBuilders: {
-                                '0': (check) => 
-                                
-                                IconButton(
-                                  iconSize: 30,
-                                      icon: saveColor0? Icon(MaterialCommunityIcons.bookmark_check):Icon(MaterialCommunityIcons.bookmark),
+                                '0': (check) => IconButton(
+                                      iconSize: 30,
+                                      icon: saveColor0
+                                          ? Icon(MaterialCommunityIcons
+                                              .bookmark_check)
+                                          : Icon(
+                                              MaterialCommunityIcons.bookmark),
                                       tooltip: 'Add to favorite',
-                                      color:
-                                          saveColor0 ? Colors.indigoAccent[100] : Colors.white,
+                                      color: saveColor0
+                                          ? Colors.indigoAccent[100]
+                                          : Colors.white,
                                       onPressed: () => setState(
                                           () => saveColor0 = !saveColor0),
                                     ),
                                 '1': (check) => IconButton(
-                                   iconSize: 30,
-                                      icon: saveColor1? Icon(MaterialCommunityIcons.bookmark_check):Icon(MaterialCommunityIcons.bookmark),
+                                      iconSize: 30,
+                                      icon: saveColor1
+                                          ? Icon(MaterialCommunityIcons
+                                              .bookmark_check)
+                                          : Icon(
+                                              MaterialCommunityIcons.bookmark),
                                       tooltip: 'Add to favorite',
                                       color: saveColor1
-                                          ? Colors.indigoAccent[100] : Colors.white,
+                                          ? Colors.indigoAccent[100]
+                                          : Colors.white,
                                       onPressed: () => setState(
                                           () => saveColor1 = !saveColor1),
                                     ),
                                 '2': (check) => IconButton(
-                                   iconSize: 30,
-                                      icon:  saveColor2? Icon(MaterialCommunityIcons.bookmark_check):Icon(MaterialCommunityIcons.bookmark),
+                                      iconSize: 30,
+                                      icon: saveColor2
+                                          ? Icon(MaterialCommunityIcons
+                                              .bookmark_check)
+                                          : Icon(
+                                              MaterialCommunityIcons.bookmark),
                                       tooltip: 'Add to favorite',
                                       color: saveColor2
-                                          ? Colors.indigoAccent[100] : Colors.white,
+                                          ? Colors.indigoAccent[100]
+                                          : Colors.white,
                                       onPressed: () => setState(
                                           () => saveColor2 = !saveColor2),
                                     ),
                                 '3': (check) => IconButton(
-                                  iconSize: 30,
-                                      icon: saveColor3? Icon(MaterialCommunityIcons.bookmark_check):Icon(MaterialCommunityIcons.bookmark),
+                                      iconSize: 30,
+                                      icon: saveColor3
+                                          ? Icon(MaterialCommunityIcons
+                                              .bookmark_check)
+                                          : Icon(
+                                              MaterialCommunityIcons.bookmark),
                                       tooltip: 'Add to favorite',
                                       color: saveColor3
-                                          ? Colors.indigoAccent[100] : Colors.white,
+                                          ? Colors.indigoAccent[100]
+                                          : Colors.white,
                                       onPressed: () => setState(
                                           () => saveColor3 = !saveColor3),
                                     ),
                                 '4': (check) => IconButton(
-                                  iconSize: 30,
-                                      icon: saveColor4? Icon(MaterialCommunityIcons.bookmark_check):Icon(MaterialCommunityIcons.bookmark),
+                                      iconSize: 30,
+                                      icon: saveColor4
+                                          ? Icon(MaterialCommunityIcons
+                                              .bookmark_check)
+                                          : Icon(
+                                              MaterialCommunityIcons.bookmark),
                                       tooltip: 'Add to favorite',
                                       color: saveColor4
-                                          ? Colors.indigoAccent[100] : Colors.white,
+                                          ? Colors.indigoAccent[100]
+                                          : Colors.white,
                                       onPressed: () => setState(
                                           () => saveColor4 = !saveColor4),
                                     ),
@@ -224,7 +252,57 @@ class _HomeState extends State<Home> {
                             ),
                           ),
                         ),
-
+                        Positioned(
+                          top: screen.height * 0.4,
+                          left: 20,
+                          child: Row(children: <Widget>[
+                            Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(30),
+                                border: Border.all(color: Colors.white),
+                              ),
+                              child: IconButton(
+                                icon: Icon(
+                                  MaterialCommunityIcons.beach,
+                                  color: Colors.white,
+                                ),
+                                onPressed: () => {},
+                              ),
+                            ),
+                            SizedBox(
+                              width: 7,
+                            ),
+                            Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(30),
+                                border: Border.all(color: Colors.white),
+                              ),
+                              child: IconButton(
+                                icon: Icon(
+                                  MaterialCommunityIcons.leaf,
+                                  color: Colors.white,
+                                ),
+                                onPressed: () {},
+                              ),
+                            ),
+                            SizedBox(
+                              width: 7,
+                            ),
+                            Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(30),
+                                border: Border.all(color: Colors.white),
+                              ),
+                              child: IconButton(
+                                icon: Icon(
+                                  MaterialCommunityIcons.food_fork_drink,
+                                  color: Colors.white,
+                                ),
+                                onPressed: () {},
+                              ),
+                            ),
+                          ]),
+                        ),
                         Positioned(
                           top: 5,
                           left: 20,
@@ -234,28 +312,28 @@ class _HomeState extends State<Home> {
                             caseBuilders: {
                               '0': (check) => Text(
                                     'Kaup Beach',
-                                    style: GoogleFonts.montserrat(color: Colors.white,
-                                    fontSize: 20),
+                                    style: GoogleFonts.montserrat(
+                                        color: Colors.white, fontSize: 20),
                                   ),
                               '1': (check) => Text(
                                     'MIT',
-                                    style: GoogleFonts.montserrat(color: Colors.white,
-                                    fontSize: 20),
+                                    style: GoogleFonts.montserrat(
+                                        color: Colors.white, fontSize: 20),
                                   ),
                               '2': (check) => Text(
                                     'Malpe Beach',
-                                    style: GoogleFonts.montserrat(color: Colors.white,
-                                    fontSize: 20),
+                                    style: GoogleFonts.montserrat(
+                                        color: Colors.white, fontSize: 20),
                                   ),
                               '3': (check) => Text(
                                     'Arbi Falls',
-                                    style: GoogleFonts.montserrat(color: Colors.white,
-                                    fontSize: 20),
+                                    style: GoogleFonts.montserrat(
+                                        color: Colors.white, fontSize: 20),
                                   ),
                               '4': (check) => Text(
                                     'Hoode Beach',
-                                    style: GoogleFonts.montserrat(color: Colors.white,
-                                    fontSize: 20),
+                                    style: GoogleFonts.montserrat(
+                                        color: Colors.white, fontSize: 20),
                                   ),
                             },
                             fallbackBuilder: (BuildContext context) =>

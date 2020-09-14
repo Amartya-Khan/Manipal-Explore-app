@@ -6,6 +6,7 @@ import 'package:explore_manipal/saved.dart';
 import 'package:explore_manipal/signup.dart';
 import 'package:explore_manipal/highestRated.dart';
 import 'package:explore_manipal/sort.dart';
+import 'package:explore_manipal/beaches.dart';
 import 'package:explore_manipal/mainpage.dart';
 import 'package:flutter/material.dart';
 //import 'package:stacked_themes/stacked_themes.dart';
@@ -44,6 +45,8 @@ class _MyAppState extends State<MyApp> {
         DetailsScreen.id: (content) => DetailsScreen(),
         SavedPage.id: (context) => SavedPage(),
         MainPage.id: (context) => MainPage(),
+       // Details.id: (context) => Details(),
+
       },
       initialRoute: MainPage.id,
     );

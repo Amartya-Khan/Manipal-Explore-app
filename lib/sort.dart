@@ -1,3 +1,5 @@
+import 'package:explore_manipal/beaches.dart';
+//import 'package:explore_manipal/detailsTab.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
@@ -31,10 +33,9 @@ class _ExploreState extends State<Explore> {
           padding: EdgeInsets.all(20.0),
           child: Column(
             children: <Widget>[
-              
               Container(
                 width: double.infinity,
-                height: screen.height*0.4,
+                height: screen.height * 0.4,
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
@@ -43,56 +44,56 @@ class _ExploreState extends State<Explore> {
                     //: MainAxisAlignment.end,
                     children: <Widget>[
                       Stack(
-                children: <Widget>[
-                  Container(
-                    // padding: EdgeInsets.fromLTRB(
-                    //     15.0, screen.height * 0.0, 0.0, 0.0),
-                    child: ClayText('Sort by',
-                        emboss: true,
-                        spread: 2.5,
-                        //depth: 35,
-                        style: GoogleFonts.montserrat(
-                            fontSize: screen.height * 0.07,
-                            fontWeight: FontWeight.bold)),
-                  ),
-                  Container(
-                    padding: EdgeInsets.fromLTRB(
-                        0.0, screen.height * 0.07, 0.0, 0.0),
-                    child: ClayText('category',
-                        emboss: true,
-                        spread: 2.5,
-                        //depth: 35,
-                        style: GoogleFonts.montserrat(
-                            fontSize: screen.height * 0.07,
-                            fontWeight: FontWeight.bold)),
-                  ),
-                  // padding: EdgeInsets.fromLTRB(260.0, 125.0, 0.0, 0.0),
-                  Container(
-                    padding: EdgeInsets.fromLTRB(
-                        screen.width * 0.66, screen.height * 0.03, 0.0, 0.0),
-                    child: ClayText('.',
-                        depth: 70,
-                        spread: 5,
-                        color: Colors.grey[100],
-                        style: TextStyle(
-                            fontSize: 80.0,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.green)),
-                  )
-                ],
-              ),
-                      SizedBox(height: 10,),
+                        children: <Widget>[
+                          Container(
+                            // padding: EdgeInsets.fromLTRB(
+                            //     15.0, screen.height * 0.0, 0.0, 0.0),
+                            child: ClayText('Sort by',
+                                emboss: true,
+                                spread: 2.5,
+                                //depth: 35,
+                                style: GoogleFonts.montserrat(
+                                    fontSize: screen.height * 0.07,
+                                    fontWeight: FontWeight.bold)),
+                          ),
+                          Container(
+                            padding: EdgeInsets.fromLTRB(
+                                0.0, screen.height * 0.07, 0.0, 0.0),
+                            child: ClayText('category',
+                                emboss: true,
+                                spread: 2.5,
+                                //depth: 35,
+                                style: GoogleFonts.montserrat(
+                                    fontSize: screen.height * 0.07,
+                                    fontWeight: FontWeight.bold)),
+                          ),
+                          // padding: EdgeInsets.fromLTRB(260.0, 125.0, 0.0, 0.0),
+                          Container(
+                            padding: EdgeInsets.fromLTRB(screen.width * 0.66,
+                                screen.height * 0.03, 0.0, 0.0),
+                            child: ClayText('.',
+                                depth: 70,
+                                spread: 5,
+                                color: Colors.grey[100],
+                                style: TextStyle(
+                                    fontSize: 80.0,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.green)),
+                          )
+                        ],
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
                       Positioned(
                           child: SvgPicture.asset(
                         'assets/car1.svg',
-                        height: screen.height*0.22,
+                        height: screen.height * 0.22,
                       ))
-
                     ],
                   ),
                 ),
               ),
-              
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 20),
                 child: Material(
@@ -139,7 +140,9 @@ class _ExploreState extends State<Explore> {
                               curveType: CurveType.convex,
                               child: IconButton(
                                 icon: (item),
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.pushNamed(context, DetailsScreen.id);
+                                },
                               ),
                             ),
                           ),
