@@ -94,10 +94,10 @@ class _MainPageState extends State<MainPage> {
               tabs: [
                 GButton(
                   gap: gap,
-                  icon: Icons.home,
+                  icon: Icons.star,
                   iconColor: Colors.black,
                   iconActiveColor: Color(0xff595fd9),
-                  text: 'Home',
+                  text: 'Highest rated',
                   textColor: Color(0xff595fd9),
                   backgroundColor: Colors.grey[300],
                   iconSize: 24,
@@ -105,10 +105,10 @@ class _MainPageState extends State<MainPage> {
                 ),
                 GButton(
                   gap: gap,
-                  icon: Icons.save,
+                  icon: Icons.sort,
                   iconColor: Colors.black,
                   iconActiveColor: Color(0xff595fd9),
-                  text: 'Like',
+                  text: 'Sort',
                   textColor: Color(0xff595fd9),
                   backgroundColor: Colors.grey[300],
                   iconSize: 24,
@@ -116,10 +116,10 @@ class _MainPageState extends State<MainPage> {
                 ),
                 GButton(
                   gap: gap,
-                  icon: Icons.search,
+                  icon: Icons.bookmark,
                   iconColor: Colors.black,
                   iconActiveColor: Color(0xff595fd9),
-                  text: 'Search',
+                  text: 'Your Saves',
                   textColor: Color(0xff595fd9),
                   backgroundColor: Colors.grey[300],
                   iconSize: 24,
