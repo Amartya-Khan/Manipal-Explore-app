@@ -1,4 +1,7 @@
+import 'package:explore_manipal/home.dart';
 import 'package:flutter/material.dart';
+import 'package:clay_containers/clay_containers.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class SignupPage extends StatefulWidget {
   static String id = 'signup';
@@ -9,6 +12,8 @@ class SignupPage extends StatefulWidget {
 class _SignupPageState extends State<SignupPage> {
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
     return new Scaffold(
         resizeToAvoidBottomPadding: false,
         body: Column(
@@ -18,23 +23,27 @@ class _SignupPageState extends State<SignupPage> {
                 child: Stack(
                   children: <Widget>[
                     Container(
-                      padding: EdgeInsets.fromLTRB(15.0, 110.0, 0.0, 0.0),
-                      child: Text(
-                        'Signup',
-                        style: TextStyle(
-                            fontSize: 80.0, fontWeight: FontWeight.bold),
-                      ),
-                    ),
+                  padding: EdgeInsets.fromLTRB(15.0, height*0.15, 0.0, 0.0),
+                  child: ClayText('Signup',
+                      emboss: true,
+                      spread: 2.5,
+                      //depth: 35,
+                      style: GoogleFonts.montserrat(
+                          fontSize: height * 0.09,
+                          fontWeight: FontWeight.bold)),
+                ),
+                // padding: EdgeInsets.fromLTRB(260.0, 125.0, 0.0, 0.0),
                     Container(
-                      padding: EdgeInsets.fromLTRB(260.0, 125.0, 0.0, 0.0),
-                      child: Text(
-                        '.',
-                        style: TextStyle(
-                            fontSize: 80.0,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.green),
-                      ),
-                    )
+                  padding: EdgeInsets.fromLTRB(width*0.73, height*0.135, 0.0, 0.0),
+                  child: ClayText('.',
+                  depth: 70,
+                      spread: 5,
+                      color: Colors.grey[100],
+                      style: TextStyle(
+                          fontSize: 80.0,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.green)),
+                )
                   ],
                 ),
               ),
@@ -42,87 +51,140 @@ class _SignupPageState extends State<SignupPage> {
                   padding: EdgeInsets.only(top: 35.0, left: 20.0, right: 20.0),
                   child: Column(
                     children: <Widget>[
-                      TextField(
-                        decoration: InputDecoration(
-                            labelText: 'EMAIL',
-                            labelStyle: TextStyle(
-                                fontFamily: 'Montserrat',
-                                fontWeight: FontWeight.bold,
-                                color: Colors.grey),
-                            // hintText: 'EMAIL',
-                            // hintStyle: ,
-                            focusedBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(color: Colors.green))),
-                      ),
-                      SizedBox(height: 10.0),
-                      TextField(
-                        decoration: InputDecoration(
-                            labelText: 'PASSWORD ',
-                            labelStyle: TextStyle(
-                                fontFamily: 'Montserrat',
-                                fontWeight: FontWeight.bold,
-                                color: Colors.grey),
-                            focusedBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(color: Colors.green))),
-                        obscureText: true,
-                      ),
-                      SizedBox(height: 10.0),
-                      TextField(
-                        decoration: InputDecoration(
-                            labelText: 'NICK NAME ',
-                            labelStyle: TextStyle(
-                                fontFamily: 'Montserrat',
-                                fontWeight: FontWeight.bold,
-                                color: Colors.grey),
-                            focusedBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(color: Colors.green))),
-                      ),
-                      SizedBox(height: 50.0),
-                      Container(
-                          height: 40.0,
-                          child: Material(
-                            borderRadius: BorderRadius.circular(20.0),
-                            shadowColor: Colors.greenAccent,
-                            color: Colors.green,
-                            elevation: 7.0,
-                            child: GestureDetector(
-                              onTap: () {},
-                              child: Center(
-                                child: Text(
-                                  'SIGNUP',
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontFamily: 'Montserrat'),
-                                ),
-                              ),
-                            ),
-                          )),
+                      ClayContainer(
+                    emboss: true,
+                    spread: 4,
+                    borderRadius: 30,
+                    child: TextField(
+                      decoration: InputDecoration(
+                          contentPadding:
+                              EdgeInsets.only(left: 15, top: 5, right: 10),
+                          border: InputBorder.none,
+                          labelText: 'Email',
+                          labelStyle: GoogleFonts.montserrat(
+                              //fontFamily: 'Montserrat',
+                              fontWeight: FontWeight.bold,
+                              color: Colors.grey[600]),
+                          focusedBorder: UnderlineInputBorder(
+                              borderSide:
+                                  BorderSide(color: Colors.transparent))),
+                    ),
+                  ),
+                  SizedBox(height: 20.0),
+                  ClayContainer(
+                    emboss: true,
+                    spread: 4,
+                    borderRadius: 30,
+                    child: TextField(
+                      obscureText: true,
+                      decoration: InputDecoration(
+                          contentPadding:
+                              EdgeInsets.only(left: 15, top: 5, right: 10),
+                          border: InputBorder.none,
+                          labelText: 'Password',
+                          labelStyle: GoogleFonts.montserrat(
+                              //fontFamily: 'Montserrat',
+                              fontWeight: FontWeight.bold,
+                              color: Colors.grey[600]),
+                          focusedBorder: UnderlineInputBorder(
+                              borderSide:
+                                  BorderSide(color: Colors.transparent))),
+                    ),
+                  ),
                       SizedBox(height: 20.0),
-                      Container(
-                        height: 40.0,
-                        color: Colors.transparent,
-                        child: Container(
-                          decoration: BoxDecoration(
-                              border: Border.all(
-                                  color: Colors.black,
-                                  style: BorderStyle.solid,
-                                  width: 1.0),
-                              color: Colors.transparent,
-                              borderRadius: BorderRadius.circular(20.0)),
-                          child: InkWell(
-                            onTap: () {
-                              Navigator.of(context).pop();
-                            },
-                            child: Center(
-                              child: Text('Go Back',
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontFamily: 'Montserrat')),
+                      ClayContainer(
+                    emboss: true,
+                    spread: 4,
+                    borderRadius: 30,
+                    child: TextField(
+                      decoration: InputDecoration(
+                          contentPadding:
+                              EdgeInsets.only(left: 15, top: 5, right: 10),
+                          border: InputBorder.none,
+                          labelText: 'Phone Number',
+                          labelStyle: GoogleFonts.montserrat(
+                              //fontFamily: 'Montserrat',
+                              fontWeight: FontWeight.bold,
+                              color: Colors.grey[600]),
+                          focusedBorder: UnderlineInputBorder(
+                              borderSide:
+                                  BorderSide(color: Colors.transparent))),
+                    ),
+                  ),
+                      SizedBox(height: 50.0),
+                      FlatButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, MainPage.id);
+                    },
+                    textColor: Colors.white,
+                    //padding: const EdgeInsets.all(0.0),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(80.0)),
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+                      child: Center(
+                        child: ClayContainer(
+                          depth: 40,
+                          //curveType: CurveType.concave,
+                          borderRadius: 30,
+                          height: height * 0.07,
+                          width: width * 0.6,
+                          //  ),
+
+                          child: Center(
+                            child: Expanded(
+                              // widthFactor: 0.5,
+                              // heightFactor: 0.5,
+                              child: Text(
+                                'Signup',
+                                style: GoogleFonts.montserrat(
+                                    fontSize: 18,
+                                    color: Color(0xFF595fd9),
+                                    fontWeight: FontWeight.w500),
+                              ),
                             ),
                           ),
                         ),
                       ),
+                    ),
+                  ),
+                      SizedBox(height: 20.0),
+                      FlatButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    textColor: Colors.white,
+                    //padding: const EdgeInsets.all(0.0),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(80.0)),
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+                      child: Center(
+                        child: ClayContainer(
+                          depth: 40,
+                          //curveType: CurveType.concave,
+                          borderRadius: 30,
+                          height: height * 0.07,
+                          width: width * 0.6,
+                          //  ),
+
+                          child: Center(
+                            child: Expanded(
+                              // widthFactor: 0.5,
+                              // heightFactor: 0.5,
+                              child: Text(
+                                'Go Back',
+                                style: GoogleFonts.montserrat(
+                                    fontSize: 18,
+                                    color: Color(0xFF595fd9),
+                                    fontWeight: FontWeight.w500),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  )
                     ],
                   )),
               // SizedBox(height: 15.0),

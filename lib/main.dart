@@ -8,9 +8,10 @@ import 'package:explore_manipal/highestRated.dart';
 import 'package:explore_manipal/explore.dart';
 import 'package:explore_manipal/home.dart';
 import 'package:flutter/material.dart';
+import 'package:stacked_themes/stacked_themes.dart';
 
-
-void main() {
+void main(){
+  //await ThemeManager.initialise();
   runApp(MyApp());
 }
 
@@ -38,9 +39,9 @@ class _MyAppState extends State<MyApp> {
         Login.id: (context) => Login(),
         SignupPage.id: (context) => SignupPage(),
         Home.id: (context) => Home(),
-        Individual.id: (context)=> Individual(),
+        Individual.id: (context) => Individual(),
         Explore.id: (context) => Explore(),
-        DetailsScreen.id : (content) => DetailsScreen(),
+        DetailsScreen.id: (content) => DetailsScreen(),
         SavedPage.id: (context) => SavedPage(),
         MainPage.id: (context) => MainPage(),
       },
