@@ -2,7 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_conditional_rendering/conditional_switch.dart';
 import 'package:flutter_icons/flutter_icons.dart';
-
+import 'package:clay_containers/clay_containers.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 class SavedPage extends StatefulWidget {
   static String id = 'saved';
   @override
@@ -18,64 +20,63 @@ class _SavedPageState extends State<SavedPage> {
 
   @override
   Widget build(BuildContext context) {
+    final screen = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        leading: Icon(Icons.menu),
-        title: Text("Home"),
-        actions: <Widget>[
-          Padding(
-            padding: EdgeInsets.all(10.0),
-            child: Container(
-              width: 36,
-              height: 30,
-              decoration: BoxDecoration(
-                  color: Colors.grey[800],
-                  borderRadius: BorderRadius.circular(10)),
-              child: Center(child: Text("0")),
-            ),
-          )
-        ],
-      ),
-      body: SafeArea(
-        child: Container(
-          padding: EdgeInsets.all(20.0),
+      
+       
+      
+      body:  Container(
+          padding: EdgeInsets.symmetric(horizontal:20.0),
           child: Column(
             children: <Widget>[
               Container(
                 width: double.infinity,
-                height: 250,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    image: DecorationImage(
-                        image: AssetImage('assets/images/Kaup_beach.jpg'),
-                        fit: BoxFit.cover)),
+                height: screen.height * 0.4,
                 child: Container(
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      gradient:
-                          LinearGradient(begin: Alignment.bottomRight, colors: [
-                        Colors.black.withOpacity(.4),
-                        Colors.black.withOpacity(.2),
-                      ])),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.end,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: ListView(
+                    //: MainAxisAlignment.end,
                     children: <Widget>[
-                      Text(
-                        "Your Saves",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 35,
-                            fontWeight: FontWeight.bold),
+                      Stack(
+                        children: <Widget>[
+                          
+                          Container(
+                            padding: EdgeInsets.fromLTRB(
+                                0.0, screen.height * 0.035, 0.0, 0.0),
+                            child: ClayText('Your Saves',
+                                emboss: true,
+                                spread: 2.5,
+                                //depth: 35,
+                                style: GoogleFonts.montserrat(
+                                    fontSize: screen.height * 0.07,
+                                    fontWeight: FontWeight.bold)),
+                          ),
+                          // padding: EdgeInsets.fromLTRB(260.0, 125.0, 0.0, 0.0),
+                          Container(
+                            padding: EdgeInsets.fromLTRB(screen.width * 0.8,
+                                screen.height * 0.0, 0.0, 0.0),
+                            child: ClayText('.',
+                                depth: 70,
+                                spread: 5,
+                                color: Colors.grey[100],
+                                style: TextStyle(
+                                    fontSize: 80.0,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.green)),
+                          )
+                        ],
                       ),
                       SizedBox(
-                        height: 30,
+                        height: 10,
                       ),
-                      SizedBox(
-                        height: 30,
-                      ),
+                      Positioned(
+                          child: SvgPicture.asset(
+                        'assets/onboarding1.svg',
+                        height: 250,
+                      ))
                     ],
                   ),
                 ),
@@ -178,7 +179,7 @@ class _SavedPageState extends State<SavedPage> {
               ))
             ],
           ),
-        ),
+        
       ),
     );
   }

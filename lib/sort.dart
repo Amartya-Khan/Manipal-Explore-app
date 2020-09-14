@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:clay_containers/clay_containers.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Explore extends StatefulWidget {
   static String id = 'explore';
@@ -11,8 +12,6 @@ class Explore extends StatefulWidget {
 }
 
 class _ExploreState extends State<Explore> {
-  
-
   final List<Widget> _icons = [
     Icon(MaterialCommunityIcons.beach, color: Colors.grey[500]),
     Icon(MaterialCommunityIcons.leaf, color: Colors.grey[500]),
@@ -24,56 +23,64 @@ class _ExploreState extends State<Explore> {
 
   @override
   Widget build(BuildContext context) {
+    final screen = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        leading: Icon(
-          Icons.menu,
-          color: Colors.grey,
-        ),
-        title: Text(
-          "Explore",
-          style: TextStyle(color: Colors.grey),
-        ),
-      ),
       body: SafeArea(
         child: Container(
           padding: EdgeInsets.all(20.0),
           child: Column(
             children: <Widget>[
+              
               Container(
                 width: double.infinity,
-                height: 250,
-                // decoration: BoxDecoration(
-                //     borderRadius: BorderRadius.circular(20),
-                //     image: DecorationImage(
-                //         image: AssetImage('assets/images/one.jpg'),
-                //         fit: BoxFit.cover)),
+                height: screen.height*0.4,
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    // gradient:
-                    //     LinearGradient(begin: Alignment.bottomRight, colors: [
-                    //   Colors.black.withOpacity(.4),
-                    //   Colors.black.withOpacity(.2),
-                    // ]
-                    // )
                   ),
                   child: ListView(
                     //: MainAxisAlignment.end,
                     children: <Widget>[
-                      ClayText(
-                        "Sort by category",
+                      Stack(
+                children: <Widget>[
+                  Container(
+                    // padding: EdgeInsets.fromLTRB(
+                    //     15.0, screen.height * 0.0, 0.0, 0.0),
+                    child: ClayText('Sort by',
                         emboss: true,
-                        spread: 1,
+                        spread: 2.5,
+                        //depth: 35,
+                        style: GoogleFonts.montserrat(
+                            fontSize: screen.height * 0.07,
+                            fontWeight: FontWeight.bold)),
+                  ),
+                  Container(
+                    padding: EdgeInsets.fromLTRB(
+                        0.0, screen.height * 0.07, 0.0, 0.0),
+                    child: ClayText('category',
+                        emboss: true,
+                        spread: 2.5,
+                        //depth: 35,
+                        style: GoogleFonts.montserrat(
+                            fontSize: screen.height * 0.07,
+                            fontWeight: FontWeight.bold)),
+                  ),
+                  // padding: EdgeInsets.fromLTRB(260.0, 125.0, 0.0, 0.0),
+                  Container(
+                    padding: EdgeInsets.fromLTRB(
+                        screen.width * 0.66, screen.height * 0.03, 0.0, 0.0),
+                    child: ClayText('.',
+                        depth: 70,
+                        spread: 5,
+                        color: Colors.grey[100],
                         style: TextStyle(
-                          //color: Colors.grey,
-                          fontSize: 35,
-                          //fontWeight: FontWeight.bold
-                        ),
-                      ),
+                            fontSize: 80.0,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.green)),
+                  )
+                ],
+              ),
                       SizedBox(
                         height: 10,
                       ),

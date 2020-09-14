@@ -95,7 +95,7 @@ class _HomeState extends State<Home> {
             child: CarouselSlider(
                 options: CarouselOptions(
                   autoPlayAnimationDuration: Duration(milliseconds: 400),
-                  height: 400,
+                  height: screen.height*0.48,
                   initialPage: 0,
                   autoPlay: true,
                   enlargeCenterPage: true,
