@@ -1,8 +1,11 @@
+
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:carousel_slider/carousel_state.dart';
 import 'package:flutter_conditional_rendering/flutter_conditional_rendering.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:clay_containers/clay_containers.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Home extends StatefulWidget {
   static String id = 'home';
@@ -43,24 +46,52 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     var screen = MediaQuery.of(context).size;
     return Scaffold(
+     
       body: Container(
           child: ListView(
         // crossAxisAlignment: CrossAxisAlignment.center,
         // mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          SizedBox(
-            height: screen.height * 0.1,
-          ),
-          Padding(
-            padding: EdgeInsets.only(left: 10.0),
-            child: Text(
-              'Highest rated',
-              style: TextStyle(fontSize: 40.0),
-            ),
-          ),
+          
+          Stack(
+                  children: <Widget>[
+                    Container(
+                  padding: EdgeInsets.fromLTRB(15.0, screen.height*0.0, 0.0, 0.0),
+                  child: ClayText('Highest',
+                      emboss: true,
+                      spread: 2.5,
+                      //depth: 35,
+                      style: GoogleFonts.montserrat(
+                          fontSize: screen.height * 0.07,
+                          fontWeight: FontWeight.bold)),
+                ),
+                    Container(
+                  padding: EdgeInsets.fromLTRB(15.0, screen.height*0.07, 0.0, 0.0),
+                  child: ClayText('Rated',
+                      emboss: true,
+                      spread: 2.5,
+                      //depth: 35,
+                      style: GoogleFonts.montserrat(
+                          fontSize: screen.height * 0.07,
+                          fontWeight: FontWeight.bold)),
+                ),
+                // padding: EdgeInsets.fromLTRB(260.0, 125.0, 0.0, 0.0),
+                    Container(
+                  padding: EdgeInsets.fromLTRB(screen.width*0.5, screen.height*0.03, 0.0, 0.0),
+                  child: ClayText('.',
+                  depth: 70,
+                      spread: 5,
+                      color: Colors.grey[100],
+                      style: TextStyle(
+                          fontSize: 80.0,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.green)),
+                )
+                  ],
+                ),
           Padding(
             padding: EdgeInsets.only(
-                top: screen.height * 0.1, bottom: screen.height * 0.05),
+                top: screen.height * 0.05, bottom: screen.height * 0.05),
             child: CarouselSlider(
                 options: CarouselOptions(
                   autoPlayAnimationDuration: Duration(milliseconds: 400),

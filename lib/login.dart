@@ -1,4 +1,4 @@
-import 'package:explore_manipal/home.dart';
+import 'package:explore_manipal/mainpage.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:clay_containers/clay_containers.dart';

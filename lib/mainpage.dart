@@ -1,10 +1,7 @@
-
-
 import 'package:flutter/material.dart';
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'highestRated.dart';
-import 'explore.dart';
+import 'sort.dart';
 import 'saved.dart';
 
 class MainPage extends StatefulWidget {
@@ -26,7 +23,43 @@ class _MainPageState extends State<MainPage> {
     final width = MediaQuery.of(context).size.width;
 
     return Scaffold(
-        appBar: AppBar(backgroundColor: Colors.white, title: Text("title")),
+         appBar: PreferredSize(
+        preferredSize: Size.fromHeight(70),
+              child: AppBar(
+          
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          iconTheme: IconThemeData(color: Colors.grey[800],),
+          
+          title: Padding(
+            padding: EdgeInsets.only(top:height*0.01,),
+                      child: Text(
+              "Manipal Explore",
+              style: TextStyle(color: Colors.grey),
+            ),
+          ),
+          
+          
+        ),
+        
+      ),
+      drawer: Container(
+        
+          color: Color(0xff595fd9),
+          child: Drawer(
+
+              child: ListView(
+            children: <Widget>[
+              Padding(
+                padding: EdgeInsets.only(bottom: height*0.2, top: height*0.5), 
+                child:FlatButton(
+                child: Text("Sign out"),
+                color: Color(0xff595fd9),
+                onPressed: () {},
+              ),),
+            ],
+          )),
+        ),
         body: PageView(
           
             controller: controller,

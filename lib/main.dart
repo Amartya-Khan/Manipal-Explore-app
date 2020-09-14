@@ -5,10 +5,10 @@ import 'package:explore_manipal/onboarding.dart';
 import 'package:explore_manipal/saved.dart';
 import 'package:explore_manipal/signup.dart';
 import 'package:explore_manipal/highestRated.dart';
-import 'package:explore_manipal/explore.dart';
-import 'package:explore_manipal/home.dart';
+import 'package:explore_manipal/sort.dart';
+import 'package:explore_manipal/mainpage.dart';
 import 'package:flutter/material.dart';
-import 'package:stacked_themes/stacked_themes.dart';
+//import 'package:stacked_themes/stacked_themes.dart';
 
 void main(){
   //await ThemeManager.initialise();
@@ -45,7 +45,7 @@ class _MyAppState extends State<MyApp> {
         SavedPage.id: (context) => SavedPage(),
         MainPage.id: (context) => MainPage(),
       },
-      initialRoute: Onboarding.id,
+      initialRoute: MainPage.id,
     );
   }
 }

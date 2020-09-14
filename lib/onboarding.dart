@@ -1,3 +1,4 @@
+import 'package:clay_containers/clay_containers.dart';
 import 'package:explore_manipal/highestRated.dart';
 import 'package:explore_manipal/login.dart';
 import 'package:flutter/material.dart';
@@ -272,34 +273,44 @@ class _OnboardingState extends State<Onboarding> {
                       ),
                     ),
                         SizedBox(height: height*0.05,),
+// color: Color(0xff93bfc2),
+                     FlatButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, Login.id);
+                    },
+                    textColor: Colors.white,
+                    //padding: const EdgeInsets.all(0.0),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(80.0)),
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+                      child: Center(
+                        child: ClayContainer(
+                          color:Color(0xff93bfc2),
+                          depth: 35,
+                          //curveType: CurveType.concave,
+                          borderRadius: 30,
+                          height: height * 0.07,
+                          width: width * 0.7,
+                          //  ),
 
-                    Center(
-                        child: FlatButton(
-                      onPressed: () {
-                        Navigator.pushNamed(context, Login.id);
-                      },
-                      textColor: Colors.white,
-                      padding: const EdgeInsets.all(0.0),
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(80.0)),
-                      child: Container(
-                        decoration: const BoxDecoration(
-                            gradient: LinearGradient(
-                              colors: <Color>[
-                                Color(0xFFd97908),
-                                Color(0xFFe58107),
-                                Color(0xFFfaa96a),
-                              ],
+                          child: Center(
+                            child: Expanded(
+                              // widthFactor: 0.5,
+                              // heightFactor: 0.5,
+                              child: Text(
+                                'Get started',
+                                style: GoogleFonts.montserrat(
+                                    fontSize: 18,
+                                    color: Colors.grey[800],
+                                    fontWeight: FontWeight.w500),
+                              ),
                             ),
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(80.0))),
-                        padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
-                        child: Text('Get started',
-                            style: GoogleFonts.montserrat(
-                              fontSize: 20)),
-                      ),),
-//                     ))
+                          ),
+                        ),
+                      ),
                     ),
+                  ),
                   ],
                 ),
               ),
